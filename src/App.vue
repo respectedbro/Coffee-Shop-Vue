@@ -1,6 +1,8 @@
 <template>
-  <div id="app">
-    Hello Vue.JS
+  <div>
+    <h1>Routing</h1>
+
+    <router-view></router-view>
   </div>
 </template>
 
