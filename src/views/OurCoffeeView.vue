@@ -83,7 +83,49 @@ import NavBarComponent from "@/components/NavBarComponent.vue"
 import ProductCardComponent from "@/components/ProductСardComponent.vue"
 
 export default {
-  components: {NavBarComponent, ProductCardComponent}
+  components: {NavBarComponent, ProductCardComponent},
+  data() {
+    return {
+      cards: [
+        {
+          id: 0,
+          image: '',
+          name: '',
+          price: ''
+        },
+        {
+          id: 1,
+          image: '',
+          name: '',
+          price: ''
+        },
+        {
+          id: 2,
+          image: '',
+          name: '',
+          price: ''
+        },
+        {
+          id: 3,
+          image: '',
+          name: '',
+          price: ''
+        },
+        {
+          id: 4,
+          image: '',
+          name: '',
+          price: ''
+        },
+        {
+          id: 5,
+          image: '',
+          name: '',
+          price: ''
+        },
+      ]
+    }
+  }
 }
 </script>
 
