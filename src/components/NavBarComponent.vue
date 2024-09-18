@@ -37,7 +37,7 @@ export default {
         {
           id: 2,
           text: 'For your pleasure',
-          link: '/for-your-pleasure '
+          link: '/for-your-pleasure'
         },
         {
           id: 3,
