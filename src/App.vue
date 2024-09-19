@@ -1,20 +1,23 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
-
+<!--    <h1 v-if="isDirectives"> Тема урока: Directives</h1>-->
+<!--    <h1 v-else> Тема урока: {{ title }}</h1>-->
+    <h1 v-show="isDirectives"> Тема урока: Directives</h1>
+    <h1 v-show="!isDirectives"> Тема урока: {{ title }}</h1>
     <ul>
       <list-item
-          :text="posts[0].text"
-          :icon="posts[0].icon"
-      />
-      <list-item
-          :text="posts[1].text"
-          :icon="posts[1].icon"
-      />
-      <list-item
-          :text="posts[2].text"
-          :icon="posts[2].icon"
-      />
+          v-for="post in posts"
+          :key="post.id"
+          :text="post.text"
+          :icon="post.icon"
+      >
+        <template v-slot:pretext>
+          <span>pretext</span>
+        </template>
+
+
+        <span>some text</span>
+      </list-item>
     </ul>
 
     <span class="total">Всего строк: {{ totalCount }}</span>
@@ -24,26 +27,29 @@
 <script>
 import ListItem from "@/components/ListItem.vue";
 
+import { v4 as uuidv4 } from 'uuid';
+
 export default {
   components: {ListItem},
   data() {
     return {
       title: 'Props',
+      isDirectives: true,
       posts: [
         {
-          id: 0,
+          id: uuidv4(),
           text: 'Текст первый',
           icon: 'setting.png',
           checked: true
         },
         {
-          id: 1,
+          id: uuidv4(),
           text: 'Текст второй',
           icon: 'user.png',
           checked: true
         },
         {
-          id: 2,
+          id: uuidv4(),
           text: 'Текст третий',
           icon: 'phone.png'
         },

@@ -3,7 +3,12 @@
     <img
         :src="require(`@/assets/images/${icon}`)"
         :alt="icon">
-    <span>{{ text }}</span>
+
+    <slot name="pretext"></slot>
+
+    <span v-html="`<b>${text}</b>`"></span>
+
+    <slot></slot>
   </li>
 </template>
 
