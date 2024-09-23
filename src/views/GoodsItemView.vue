@@ -1,14 +1,13 @@
-
 <template>
   <main>
-    <div class="banner itempage-banner">
+    <div class="banner" :class="pageName === 'coffee' ? 'coffepage-banner' : 'goodspage-banner'">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
             <nav-bar-component/>
           </div>
         </div>
-        <h1 class="title-big">Our Coffee</h1>
+        <h1 class="title-big">{{ card.name }}</h1>
       </div>
     </div>
 
@@ -16,7 +15,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 offset-1">
-            <img class="shop__girl" src="@/assets/img/coffee_item.jpg" alt="coffee_item">
+            <img class="shop__girl" :src="require(`@/assets/img/${card.image}`)" alt="coffee_item">
           </div>
           <div class="col-lg-4">
             <div class="title">About it</div>
@@ -33,8 +32,8 @@
               consequat.
             </div>
             <div class="shop__point">
-              <span>Price:</span>
-              <span class="shop__point-price">16.99$</span>
+              <span>Price: </span>
+              <span class="shop__point-price">{{ card.price | addCurrency }}</span>
             </div>
           </div>
         </div>
@@ -49,7 +48,15 @@
 import NavBarComponent from "@/components/NavBarComponent.vue";
 
 export default {
-  components: {NavBarComponent}
+  components: {NavBarComponent},
+  computed: {
+    pageName() {
+      return this.$route.name
+    },
+    card() {
+      return this.$store.getters["getProductById"](this.$route.params.id)
+    }
+  }
 }
 </script>
 <style scoped>

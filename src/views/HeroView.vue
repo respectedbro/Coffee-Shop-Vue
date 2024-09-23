@@ -54,12 +54,10 @@
             <div class="best__wrapper">
 
               <product-card-component
-                  v-for="best of bestsellers"
-                  :key="best.id"
+                  v-for="card of bestsellers"
+                  :key="card.id"
                   classItem="best__item"
-                  :name="best.name"
-                  :price="best.price"
-                  :image="best.image"
+                  :card="card"
               />
 
             </div>
