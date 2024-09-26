@@ -44,6 +44,11 @@ const goodsCards = {
     getters: {
         getGoodsCards(state) {
             return state.goods
+        },
+        getProductById(state) {
+            return (id)  => {
+                return state.coffee.find((card) => card.id === +id)
+            }
         }
     }
 }

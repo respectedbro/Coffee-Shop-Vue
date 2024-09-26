@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      name: "coffee"
+      name: "goods"
     }
   },
   mixins: [navigate]

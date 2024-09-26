@@ -30,7 +30,7 @@
                 </div>
                 <div class="col col-12 col-sm-9">
                   <input
-                      v-model="form.name"
+                      v-model="name"
                       type="text"
                       class="form-control"
                       id="name-input">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col col-12 col-sm-9">
                   <input
-                      v-model="form.email"
+                      v-model="email"
                       type="email"
                       class="form-control"
                       id="email-input">
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col col-12 col-sm-9">
                   <input
-                      v-model="form.phone"
+                      v-model="phone"
                       type="tel"
                       class="form-control"
                       id="phone-input"
@@ -78,7 +78,7 @@
                 </div>
                 <div class="col col-12">
                   <textarea
-                      v-model="form.massage"
+                      v-model="massage"
                       class="form-control"
                       name="message"
                       id="message"
@@ -105,21 +105,22 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue"
 
+import { useVuelidate } from '@vuelidate/core'
+import { required, email } from '@vuelidate/validators'
+
 export default {
   components: {NavBarComponent},
   data() {
     return {
-      form: {
-        name: '',
-        email: '',
-        phone: '',
-        massage: ''
-      }
+      name: '',
+      email: '',
+      phone: '',
+      massage: ''
     }
   },
   methods: {
     submit() {
-      console.log(this.form)
+
     }
   }
 }
