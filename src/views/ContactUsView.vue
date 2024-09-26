@@ -94,20 +94,19 @@
                 </div>
                 <div class="col col-12">
                   <textarea
-                      v-model="v$.massage.$model"
+                      v-model="v$.message.$model"
                       class="form-control"
                       name="message"
                       id="message"
                       rows="5"
                       placeholder="Leave your comments here">
                   </textarea>
-                  <span v-for="error in v$.massage.$errors" :key="error.$uid"
+                  <span v-for="error in v$.message.$errors" :key="error.$uid"
                   >
                     {{ error.$message }}
                   </span>
                 </div>
               </div>
-
               <div class="row">
                 <div class="col">
                   <button class="btn btn-outline-dark send-btn">Send us</button>
@@ -125,7 +124,10 @@
 import NavBarComponent from "@/components/NavBarComponent.vue"
 
 import {useVuelidate} from '@vuelidate/core'
-import {required, email} from '@vuelidate/validators'
+import {required, email, maxLength} from '@vuelidate/validators'
+import {helpers} from '@vuelidate/validators'
+import {minLength} from "@/validators/minLength";
+
 
 export default {
   setup() {
@@ -136,7 +138,7 @@ export default {
       name: '',
       email: '',
       phone: '',
-      massage: ''
+      message: ''
     }
   },
   components: {NavBarComponent},
@@ -145,12 +147,23 @@ export default {
       name: {required},
       email: {required, email},
       phone: {},
-      massage: {required}
+      message: {
+        required,
+        maxLength: maxLength(20),
+        minLength: helpers.withMessage('this value min 5', minLength)
+      }
     }
   },
   methods: {
-    submit() {
-
+    async submit() {
+      const isFormCorrect = await this.v$.$validate()
+      if (!isFormCorrect) return
+        console.log({
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        message: this.message,
+      })
     }
   }
 }
