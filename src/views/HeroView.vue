@@ -79,15 +79,8 @@ export default {
   components: {NavBarComponent, ProductCardComponent},
   computed: {
     bestsellers() {
-      return this.$store.getters["getBestsellersCards"]
+      return this.$store.getters["getBestsellers"]
     }
-  },
-  mounted() {
-    fetch('http://localhost:3000/bestsellers')
-        .then(res => res.json())
-        .then(data => {
-          this.$store.dispatch("setBestsellers", data)
-        })
   },
   methods: {
     smoothScroll() {
@@ -96,6 +89,13 @@ export default {
         block: "start"
       });
     }
+  },
+  mounted() {
+    fetch('http://localhost:3000/bestsellers')
+        .then(res => res.json())
+        .then(data => {
+          this.$store.dispatch("setBestsellersData", data)
+        })
   },
 }
 </script>

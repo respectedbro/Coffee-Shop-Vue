@@ -1,8 +1,8 @@
 import {v4 as uuidv4} from "uuid";
 
-const coffeeCards = {
+const goods = {
     state: {
-        coffee: [
+        goods: [
             {
                 id: 0,
                 image: 'coffee-1.jpg',
@@ -42,25 +42,25 @@ const coffeeCards = {
         ]
     },
     mutations: {
-        setCoffeeData(state, data) {
-            state.coffee = data
+        setGoodsData(state, data) {
+            state.goods = data
         }
     },
     actions: {
-        setCoffeeData({commit}, data) {
-            commit('setCoffeeData', data)
+        setGoodsData({commit}, data) {
+            commit("setGoodsData", data)
         }
     },
     getters: {
-        getCoffeeCards(state) {
-            return state.coffee
+        getGoods(state) {
+            return state.goods
         },
-        getProductById(state) {
-            return (id) => {
+        getGoodsById(state) {
+            return (id)  => {
                 return state.coffee.find((card) => card.id === +id)
             }
         }
     }
 }
 
-export default coffeeCards
+export default goods

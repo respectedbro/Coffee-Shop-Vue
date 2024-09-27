@@ -74,33 +74,25 @@
       "id": 0,
       "name": "Electric Spice and Coffee Grinder",
       "image": "https://images-na.ssl-images-amazon.com/images/I/41qvqWRCm3L.jpg",
-      "price": "36.99$",
-      "country": "Columbia",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet."
+      "price": "36.99$"
     },
     {
       "id": 1,
       "name": "Manual Coffee Grinder",
       "image": "https://images-na.ssl-images-amazon.com/images/I/91gR5HFtmaL._SL1500_.jpg",
-      "price": "25.99$",
-      "country": "Columbia",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet."
+      "price": "25.99$"
     },
     {
       "id": 2,
       "name": "Coffee Cup with Lid",
       "image": "https://images-na.ssl-images-amazon.com/images/I/71L5Ut1HHSL._SL1500_.jpg",
-      "price": "15.99$",
-      "country": "Columbia",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet."
+      "price": "15.99$"
     },
     {
       "id": 3,
       "name": "Pour Over Coffee Maker",
       "image": "https://images-na.ssl-images-amazon.com/images/I/916TPwGqfML._SL1500_.jpg",
-      "price": "45.99$",
-      "country": "Columbia",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet."
+      "price": "45.99$"
     }
   ],
   "contacts": [

@@ -64,7 +64,7 @@ export default {
   components: {NavBarComponent, ProductCardComponent},
   computed: {
     goods() {
-      return this.$store.getters["getGoodsCards"]
+      return this.$store.getters["getGoods"]
     }
   },
   data() {

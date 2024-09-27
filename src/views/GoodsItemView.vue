@@ -16,19 +16,24 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5 offset-1">
-            <img class="shop__girl"
-                 :src="product.image"
-                 alt="coffee_item"
+            <img
+                class="shop__girl"
+                :src="product.image"
+                alt="coffee_item"
             />
           </div>
           <div class="col-lg-4">
             <div class="title">About it</div>
-            <img class="beanslogo" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo">
-            <div class="shop__point">
+            <img
+                class="beanslogo"
+                src="@/assets/logo/Beans_logo_dark.svg"
+                alt="Beans logo"
+            />
+            <div class="shop__point" v-if="product.country">
               <span>Country:</span>
               {{ product.country }}
             </div>
-            <div class="shop__point">
+            <div class="shop__point" v-if="product.description">
               <span>Description:</span>
               {{ product.description }}
             </div>
@@ -56,21 +61,11 @@ export default {
     }
   },
   mounted() {
-    const routeName = this.$route.name;
-
-    if (routeName === "coffee") {
-      fetch(`http://localhost:3000/coffee/${this.$route.params.id}`)
-          .then(res => res.json())
-          .then(data => {
-            this.product = data;
-          });
-    } else if (routeName === "goods") {
-      fetch(`http://localhost:3000/goods/${this.$route.params.id}`)
-          .then(res => res.json())
-          .then(data => {
-            this.product = data;
-          });
-    }
+    fetch(`http://localhost:3000/${this.pageName}/${this.$route.params.id}`)
+        .then(res => res.json())
+        .then(data => {
+          this.product = data;
+        });
   },
   destroyed() {
     this.product = null
