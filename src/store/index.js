@@ -14,6 +14,7 @@ const store = new Vuex.Store({
         coffeeCards,
         goodsCards,
         links,
+
     }
 })
 

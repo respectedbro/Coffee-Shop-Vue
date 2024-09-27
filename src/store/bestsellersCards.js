@@ -23,6 +23,17 @@ const bestsellersCards = {
             },
         ],
     },
+
+    mutations: {
+        setBestsellers(state, data) {
+            state.bestsellers = data
+        }
+    },
+    actions: {
+        setBestsellers({commit}, data) {
+            commit("setBestsellers", data)
+        }
+    },
     getters: {
         getBestsellersCards(state) {
             return state.bestsellers
